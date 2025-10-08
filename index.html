@@ -1,0 +1,357 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nike Shoes</title>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Winky+Sans:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            margin: 0;
+            font-family: "Winky Sans", sans-serif;
+            background-color: black;
+            color: white;
+        }
+        .navbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background-color: black;
+            padding: 15px 30px;
+        }
+        .logo {
+            width: 130px;
+        }
+        .navbar ul {
+            list-style: none;
+            display: flex;
+            gap: 20px;
+        }
+        .navbar ul li {
+            display: inline;
+        }
+        .navbar ul li a {
+            text-decoration: none;
+            color: white;
+            font-size: 24px;
+            font-family: "Winky Sans", sans-serif;
+            transition: 0.3s;
+        }
+        #cart-btn {
+            background: none;
+            border: none;
+            cursor: pointer;
+            padding: 5px;
+        }
+        #cart-btn svg {
+            width: 30px;
+            height: 30px;
+            transition: transform 0.2s ease-in-out;
+        }
+        #cart-btn:hover svg {
+            transform: scale(1.1);
+            stroke: #ccc;
+        }
+        .video-container {
+    width: 100%;
+    height: 85vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 10px; /* Adjust spacing around the video */
+    box-sizing: border-box;
+}
+
+.video-container video {
+    width: 98%; /* Slightly reduced width to balance borders */
+    height: 98%;
+    object-fit: cover;
+    border: 15px solid black;
+    border-radius: 10px;
+    display: block;
+}
+        .slider-container {
+            width: 100%;
+            height: 80vh;
+            overflow: hidden;
+            position: relative;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 20px;
+        }
+       .slider-container img {
+    width: 98%; /* Reduced width */
+    height: 98%; /* Reduced height */
+    object-fit: cover;
+    position: absolute;
+    opacity: 0;
+    transition: opacity 1s ease-in-out;
+    border: 15px solid black;
+    border-radius: 10px;
+    box-sizing: border-box;
+}
+        .slider-container img.active {
+            opacity: 1;
+        }
+    .three-images-container {
+        width: 100%;
+        height: 90vh; /* Increased height */
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 20px;
+        box-sizing: border-box;
+    }
+    .three-images-container img {
+        object-fit: cover;
+        border: 10px solid black;
+        border-radius: 10px;
+    }
+    .rectangle-img {
+        width: 80%; /* Larger rectangle */
+        height: 100%;
+    }
+    .square-images {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        height: 100%;
+        width: 35%;
+    }
+    .square-img {
+        width: 100%;
+        height: 55%; /* Square images */
+    }   
+.kicks-header {
+    font-size: 50px; /* Increased size */
+    text-align: center;
+    margin-top: 50px;
+}
+
+.info-container {
+    display: flex;
+    justify-content: space-between;
+    padding: 30px;
+}
+
+.info-section {
+    width: 30%;
+}
+
+h2 {
+    font-size: 28px; /* Increased size */
+    margin-bottom: 15px;
+}
+
+.sub-item {
+    cursor: pointer;
+    font-weight: bold;
+    font-size: 22px; /* Increased size */
+    margin: 15px 0;
+}
+
+.info-content {
+    display: none;
+    margin-top: 10px;
+    font-size: 20px; /* Increased size */
+    color: #ccc;
+}
+
+.social-media {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    margin: 50px 0;
+}
+
+.social-icon {
+    font-size: 40px;
+    color: white;
+    transition: transform 0.3s ease-in-out, color 0.3s;
+}
+
+.social-icon:hover {
+    transform: scale(1.2);
+    color: #ffcc00; /* Changes color on hover */
+}
+
+ </style>
+</head>
+<body>
+    <nav class="navbar">
+        <img src="images/nike-logo.png" alt="Nike Logo" class="logo">
+        <ul>
+            <li><a href="men.html">Men</a></li>
+            <li><a href="women.html">Women</a></li>
+            <li><a href="kids.html">Kids</a></li>
+             <li><a href="#about-section">About</a></li>
+        </ul>
+        <button id="cart-btn">
+            <svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M6 6h12l1 14H5z"></path>
+                <path d="M9 6a3 3 0 0 1 6 0"></path>
+            </svg>
+        </button>
+    </nav>
+    
+    <div class="video-container">
+        <video autoplay loop muted>
+            <source src="video1.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+        </video>
+    </div>
+
+    <div class="slider-container">
+        <img src="images/image1.jpg" class="active">
+        <img src="images/image2.jpg">
+        <img src="images/image3.jpg">
+        <img src="images/image4.jpg">
+        <img src="images/image5.jpg">
+    </div>
+
+    <div class="video-container">
+        <video autoplay loop muted>
+            <source src="video2.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+        </video>
+    </div>
+
+   <div class="three-images-container">
+    <img src="images/photo1.jpg" class="rectangle-img">
+    <div class="square-images">
+        <img src="images/photo2.jpg" class="square-img">
+        <a href="men.html">
+    <img src="images/photo3.jpg" class="square-img clickable-img">
+</a>
+ </div>
+</div>
+<div id="about-section">
+
+<h1 class="kicks-header">KICKS</h1>
+
+<div class="info-container">
+    <!-- About KICKS -->
+    <div class="info-section">
+        <h2>About KICKS</h2>
+        <ul>
+            <li class="sub-item" data-target="corporate-info">Corporate Info</li>
+            <p id="corporate-info" class="info-content">
+                KICKS is a leading global footwear brand, known for its innovative designs, high-performance materials, 
+                and commitment to quality. Our mission is to provide stylish and comfortable footwear for all.
+            </p>
+
+            <li class="sub-item" data-target="corporate-governance">Corporate Governance</li>
+            <p id="corporate-governance" class="info-content">
+                KICKS follows strict corporate governance policies, ensuring transparency, ethical business practices, 
+                and sustainability. Our board oversees all financial and operational aspects to maintain trust and integrity.
+            </p>
+        </ul>
+    </div>
+
+    <!-- Customer Service -->
+    <div class="info-section">
+        <h2>Customer Service</h2>
+        <ul>
+            <li class="sub-item" data-target="return-policy">Return Policy</li>
+            <p id="return-policy" class="info-content">
+                We offer a **30-day return policy** on all purchases. Items must be unworn, in original packaging, 
+                and accompanied by proof of purchase. Refunds are processed within 7-10 business days.
+            </p>
+
+            <li class="sub-item" data-target="product-info">Product Information</li>
+            <p id="product-info" class="info-content">
+                All KICKS footwear is designed using high-quality materials and cutting-edge technology. 
+                Our shoes offer superior comfort, breathability, and durability for everyday wear.
+            </p>
+
+            <li class="sub-item" data-target="contact-us">Contact Us</li>
+            <p id="contact-us" class="info-content">
+                Need help? Reach out to our customer support team at **support@kicks.com** or call **1-800-KICKS-24**.
+                Available **Monday–Friday, 9 AM–6 PM EST**.
+            </p>
+
+            <li class="sub-item" data-target="sitemap">Sitemap</li>
+            <p id="sitemap" class="info-content">
+                Explore all our product categories, latest releases, and brand collaborations at **www.kicks.com/sitemap**.
+            </p>
+        </ul>
+    </div>
+
+    <!-- Others -->
+    <div class="info-section">
+        <h2>Others</h2>
+        <ul>
+            <li class="sub-item" data-target="faq">FAQ</li>
+            <p id="faq" class="info-content">
+                Find answers to common questions about our products, orders, and shipping at **www.kicks.com/faq**.
+            </p>
+
+            <li class="sub-item" data-target="terms">Terms & Conditions</li>
+            <p id="terms" class="info-content">
+                By purchasing from KICKS, you agree to our terms and conditions, including shipping policies, 
+                returns, and product warranties. Full details: **www.kicks.com/terms**.
+            </p>
+
+            <li class="sub-item" data-target="privacy">Privacy Policy</li>
+            <p id="privacy" class="info-content">
+                We value your privacy. Read how we handle your data, cookies, and security at **www.kicks.com/privacy**.
+            </p>
+
+            <li class="sub-item" data-target="find-store">Find A Store</li>
+            <p id="find-store" class="info-content">
+                Locate the nearest KICKS retail store using our **store finder**: **www.kicks.com/stores**.
+            </p>
+        </ul>
+    </div>
+</div>
+</div>
+<div class="social-media">
+    <a href="#" class="social-icon"><i class="fab fa-facebook-f"></i></a>
+    <a href="#" class="social-icon"><i class="fab fa-twitter"></i></a>
+        <a href="https://www.instagram.com/amanwalia_16" target="_blank" class="social-icon">
+        <i class="fab fa-instagram"></i>
+    </a>
+    <a href="#" class="social-icon"><i class="fab fa-youtube"></i></a>
+    <a href="#" class="social-icon"><i class="fab fa-linkedin-in"></i></a>
+</div>
+    <script>
+        $(document).ready(function(){
+            $(".navbar ul li a").hover(
+                function() { $(this).animate({ letterSpacing: "3px" }, 200); }, 
+                function() { $(this).animate({ letterSpacing: "0px" }, 200); }
+            );
+
+            $("#cart-btn").click(function(){
+                $(this).animate({ fontSize: "35px" }, 200).animate({ fontSize: "30px" }, 200);
+                alert("Your cart is empty!");
+            });
+
+            $("body").hide().fadeIn(1000);
+
+            // Image Slider
+            let index = 0;
+            setInterval(function(){
+                let images = $(".slider-container img");
+                images.removeClass("active");
+                index = (index + 1) % images.length;
+                images.eq(index).addClass("active");
+            }, 3000);
+
+setInterval(function(){
+    $(".clickable-img").animate({ opacity: 0.7, scale: 1.05 }, 500)
+                      .animate({ opacity: 1, scale: 1 }, 500);
+}, 1200);
+$(".sub-item").click(function() {
+    let target = $(this).data("target");
+    $(".info-content").slideUp(); // Hide all sections
+    $("#" + target).slideToggle(); // Show clicked section
+});
+
+
+        });
+    </script>
+</body>
+</html>
